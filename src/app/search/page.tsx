@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, Suspense } from 'react'
 import { useSearchParams } from 'next/navigation'
 import { Search, Clock, TrendingUp } from 'lucide-react'
 import { Input } from '@/components/ui/Input'
@@ -10,7 +10,7 @@ import { menuItems } from '@/data/menu'
 import { Restaurant, MenuItem } from '@/lib/types'
 import { debounce } from '@/lib/utils'
 
-export default function SearchPage() {
+function SearchContent() {
   const searchParams = useSearchParams()
   const initialQuery = searchParams.get('q') || ''
   
@@ -239,5 +239,20 @@ export default function SearchPage() {
         )}
       </div>
     </div>
+  )
+}
+
+export default function SearchPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-orange-500 mx-auto mb-4"></div>
+          <p className="text-gray-600">Loading...</p>
+        </div>
+      </div>
+    }>
+      <SearchContent />
+    </Suspense>
   )
 }

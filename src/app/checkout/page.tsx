@@ -42,9 +42,22 @@ export default function CheckoutPage() {
     }, 2000)
   }
 
-  if (items.length === 0) {
+  // Handle SSR - don't redirect during server rendering
+  if (typeof window !== 'undefined' && items.length === 0) {
     router.push('/cart')
     return null
+  }
+
+  // Show loading during SSR or when cart is empty
+  if (typeof window === 'undefined' || items.length === 0) {
+    return (
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-orange-500 mx-auto mb-4"></div>
+          <p className="text-gray-600">Loading...</p>
+        </div>
+      </div>
+    )
   }
 
   return (
