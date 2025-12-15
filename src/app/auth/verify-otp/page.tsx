@@ -110,15 +110,15 @@ export default function VerifyOtpPage() {
   }
 
   return (
-    <div className="min-h-screen bg-secondary-50 flex items-center justify-center py-12 px-4">
+    <div className="min-h-screen bg-gray-50 flex items-center justify-center py-12 px-4">
       <div className="w-full max-w-md">
         {/* Logo */}
         <div className="text-center mb-8">
           <Link href="/" className="inline-flex items-center space-x-2">
-            <div className="w-10 h-10 bg-primary-500 rounded-lg flex items-center justify-center">
+            <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center">
               <span className="text-white font-bold text-xl">F</span>
             </div>
-            <span className="text-2xl font-bold text-secondary-900">FoodieExpress</span>
+            <span className="text-2xl font-bold text-gray-900">FoodieExpress</span>
           </Link>
         </div>
 
@@ -128,7 +128,7 @@ export default function VerifyOtpPage() {
             <CardDescription>
               We've sent a 6-digit code to your phone number
               <br />
-              <span className="font-medium text-secondary-900">+91 98765 43210</span>
+              <span className="font-medium text-gray-900">+91 98765 43210</span>
             </CardDescription>
           </CardHeader>
           
@@ -136,14 +136,16 @@ export default function VerifyOtpPage() {
             <form onSubmit={handleSubmit} className="space-y-6">
               {/* OTP Input */}
               <div>
-                <label className="block text-sm font-medium text-secondary-700 mb-3 text-center">
+                <label className="block text-sm font-medium text-gray-700 mb-3 text-center">
                   Enter OTP
                 </label>
                 <div className="flex justify-center space-x-3">
                   {otp.map((digit, index) => (
                     <input
                       key={index}
-                      ref={(el) => (inputRefs.current[index] = el)}
+                      ref={(el) => {
+                        inputRefs.current[index] = el
+                      }}
                       type="text"
                       inputMode="numeric"
                       pattern="\d*"
@@ -152,7 +154,7 @@ export default function VerifyOtpPage() {
                       onChange={(e) => handleOtpChange(index, e.target.value)}
                       onKeyDown={(e) => handleKeyDown(index, e)}
                       onPaste={handlePaste}
-                      className="w-12 h-12 text-center text-lg font-semibold border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-colors"
+                      className="w-12 h-12 text-center text-lg font-semibold border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 outline-none transition-colors"
                     />
                   ))}
                 </div>
@@ -171,18 +173,18 @@ export default function VerifyOtpPage() {
 
             {/* Resend OTP */}
             <div className="text-center mt-6">
-              <p className="text-sm text-secondary-600 mb-2">
+              <p className="text-sm text-gray-600 mb-2">
                 Didn't receive the code?
               </p>
               {canResend ? (
                 <button
                   onClick={handleResendOtp}
-                  className="text-primary-500 hover:text-primary-600 font-medium transition-colors"
+                  className="text-orange-500 hover:text-orange-600 font-medium transition-colors"
                 >
                   Resend OTP
                 </button>
               ) : (
-                <p className="text-secondary-500">
+                <p className="text-gray-500">
                   Resend OTP in {resendTimer}s
                 </p>
               )}
@@ -192,7 +194,7 @@ export default function VerifyOtpPage() {
             <div className="text-center mt-4">
               <Link
                 href="/auth/signup"
-                className="text-sm text-secondary-600 hover:text-secondary-800 transition-colors"
+                className="text-sm text-gray-600 hover:text-gray-800 transition-colors"
               >
                 Change phone number
               </Link>
