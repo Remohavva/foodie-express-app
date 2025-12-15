@@ -87,10 +87,10 @@ export default function OrdersPage() {
   }
 
   return (
-    <div className="min-h-screen bg-secondary-50 py-6">
+    <div className="min-h-screen bg-gray-50 py-6">
       <div className="container max-w-4xl">
         <div className="flex items-center justify-between mb-6">
-          <h1 className="text-2xl md:text-3xl font-bold text-secondary-900">
+          <h1 className="text-2xl md:text-3xl font-bold text-gray-900">
             My Orders
           </h1>
         </div>
@@ -108,8 +108,8 @@ export default function OrdersPage() {
               onClick={() => setFilter(tab.key as any)}
               className={`flex-1 py-2 px-4 rounded-md text-sm font-medium transition-colors ${
                 filter === tab.key
-                  ? 'bg-primary-500 text-white'
-                  : 'text-secondary-600 hover:text-secondary-900'
+                  ? 'bg-orange-500 text-white'
+                  : 'text-gray-600 hover:text-gray-900'
               }`}
             >
               {tab.label}
@@ -120,13 +120,13 @@ export default function OrdersPage() {
         {/* Orders List */}
         {filteredOrders.length === 0 ? (
           <div className="text-center py-12">
-            <div className="w-24 h-24 mx-auto mb-4 bg-secondary-200 rounded-full flex items-center justify-center">
-              <Clock className="w-8 h-8 text-secondary-500" />
+            <div className="w-24 h-24 mx-auto mb-4 bg-gray-200 rounded-full flex items-center justify-center">
+              <Clock className="w-8 h-8 text-gray-500" />
             </div>
-            <h3 className="text-lg font-semibold text-secondary-900 mb-2">
+            <h3 className="text-lg font-semibold text-gray-900 mb-2">
               No orders found
             </h3>
-            <p className="text-secondary-600 mb-4">
+            <p className="text-gray-600 mb-4">
               {filter === 'all' 
                 ? "You haven't placed any orders yet"
                 : `No ${filter} orders found`
@@ -149,17 +149,17 @@ export default function OrdersPage() {
                         className="w-16 h-16 rounded-lg object-cover"
                       />
                       <div>
-                        <h3 className="font-semibold text-secondary-900 mb-1">
+                        <h3 className="font-semibold text-gray-900 mb-1">
                           {order.restaurantName}
                         </h3>
-                        <p className="text-sm text-secondary-600 mb-2">
+                        <p className="text-sm text-gray-600 mb-2">
                           Order #{order.id}
                         </p>
                         <div className="flex items-center space-x-2">
                           <Badge className={statusConfig[order.status as keyof typeof statusConfig].color}>
                             {statusConfig[order.status as keyof typeof statusConfig].label}
                           </Badge>
-                          <span className="text-sm text-secondary-600">
+                          <span className="text-sm text-gray-600">
                             {order.orderTime.toLocaleDateString()} at {order.orderTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
                           </span>
                         </div>
@@ -167,10 +167,10 @@ export default function OrdersPage() {
                     </div>
                     
                     <div className="text-right">
-                      <p className="font-semibold text-secondary-900 mb-1">
+                      <p className="font-semibold text-gray-900 mb-1">
                         {formatPrice(order.total)}
                       </p>
-                      <p className="text-sm text-secondary-600">
+                      <p className="text-sm text-gray-600">
                         {order.items.length} item{order.items.length > 1 ? 's' : ''}
                       </p>
                     </div>
@@ -181,10 +181,10 @@ export default function OrdersPage() {
                     <div className="space-y-1">
                       {order.items.map((item, index) => (
                         <div key={index} className="flex justify-between text-sm">
-                          <span className="text-secondary-700">
+                          <span className="text-gray-700">
                             {item.quantity}x {item.name}
                           </span>
-                          <span className="text-secondary-900">
+                          <span className="text-gray-900">
                             {formatPrice(item.price * item.quantity)}
                           </span>
                         </div>
@@ -193,11 +193,11 @@ export default function OrdersPage() {
                   </div>
 
                   {/* Delivery Address */}
-                  <div className="flex items-start space-x-2 mb-4 p-3 bg-secondary-50 rounded-lg">
-                    <MapPin className="w-4 h-4 text-secondary-500 mt-0.5" />
+                  <div className="flex items-start space-x-2 mb-4 p-3 bg-gray-50 rounded-lg">
+                    <MapPin className="w-4 h-4 text-gray-500 mt-0.5" />
                     <div>
-                      <p className="text-sm font-medium text-secondary-900">Delivered to</p>
-                      <p className="text-sm text-secondary-600">{order.address}</p>
+                      <p className="text-sm font-medium text-gray-900">Delivered to</p>
+                      <p className="text-sm text-gray-600">{order.address}</p>
                     </div>
                   </div>
 

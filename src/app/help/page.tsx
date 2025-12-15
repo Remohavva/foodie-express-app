@@ -114,20 +114,20 @@ export default function HelpPage() {
   }
 
   return (
-    <div className="min-h-screen bg-secondary-50 py-6">
+    <div className="min-h-screen bg-gray-50 py-6">
       <div className="container max-w-4xl">
         {/* Header */}
         <div className="text-center mb-8">
-          <h1 className="text-3xl md:text-4xl font-bold text-secondary-900 mb-4">
+          <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             How can we help you?
           </h1>
-          <p className="text-lg text-secondary-600 mb-6">
+          <p className="text-lg text-gray-600 mb-6">
             Find answers to common questions or get in touch with our support team
           </p>
 
           {/* Search */}
           <div className="max-w-md mx-auto relative">
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-secondary-500 w-5 h-5" />
+            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500 w-5 h-5" />
             <Input
               type="text"
               placeholder="Search for help..."
@@ -145,19 +145,19 @@ export default function HelpPage() {
             return (
               <Card key={option.title} className="text-center hover:shadow-md transition-shadow">
                 <CardContent className="p-6">
-                  <div className="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Icon className="w-6 h-6 text-primary-600" />
+                  <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Icon className="w-6 h-6 text-orange-600" />
                   </div>
-                  <h3 className="font-semibold text-secondary-900 mb-2">
+                  <h3 className="font-semibold text-gray-900 mb-2">
                     {option.title}
                   </h3>
-                  <p className="text-secondary-600 text-sm mb-3">
+                  <p className="text-gray-600 text-sm mb-3">
                     {option.description}
                   </p>
-                  <p className="text-secondary-900 font-medium text-sm mb-1">
+                  <p className="text-gray-900 font-medium text-sm mb-1">
                     {option.details}
                   </p>
-                  <p className="text-secondary-500 text-xs mb-4">
+                  <p className="text-gray-500 text-xs mb-4">
                     {option.available}
                   </p>
                   <Button size="sm" className="w-full">
@@ -180,8 +180,8 @@ export default function HelpPage() {
                 onClick={() => setSelectedCategory('all')}
                 className={`px-3 py-1.5 rounded-full text-sm font-medium transition-colors ${
                   selectedCategory === 'all'
-                    ? 'bg-primary-500 text-white'
-                    : 'bg-secondary-100 text-secondary-700 hover:bg-secondary-200'
+                    ? 'bg-orange-500 text-white'
+                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                 }`}
               >
                 All
@@ -192,8 +192,8 @@ export default function HelpPage() {
                   onClick={() => setSelectedCategory(category.category)}
                   className={`px-3 py-1.5 rounded-full text-sm font-medium transition-colors ${
                     selectedCategory === category.category
-                      ? 'bg-primary-500 text-white'
-                      : 'bg-secondary-100 text-secondary-700 hover:bg-secondary-200'
+                      ? 'bg-orange-500 text-white'
+                      : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                   }`}
                 >
                   {category.category}
@@ -205,7 +205,7 @@ export default function HelpPage() {
           <CardContent>
             {filteredFaqs.length === 0 ? (
               <div className="text-center py-8">
-                <p className="text-secondary-600">
+                <p className="text-gray-600">
                   No FAQs found matching your search.
                 </p>
               </div>
@@ -213,7 +213,7 @@ export default function HelpPage() {
               <div className="space-y-6">
                 {filteredFaqs.map((category) => (
                   <div key={category.category}>
-                    <h3 className="font-semibold text-secondary-900 mb-4 pb-2 border-b border-secondary-200">
+                    <h3 className="font-semibold text-gray-900 mb-4 pb-2 border-b border-gray-200">
                       {category.category}
                     </h3>
                     <div className="space-y-3">
@@ -228,23 +228,23 @@ export default function HelpPage() {
                           return (
                             <div
                               key={faqId}
-                              className="border border-secondary-200 rounded-lg overflow-hidden"
+                              className="border border-gray-200 rounded-lg overflow-hidden"
                             >
                               <button
                                 onClick={() => toggleFaq(faqId)}
-                                className="w-full px-4 py-3 text-left flex items-center justify-between hover:bg-secondary-50 transition-colors"
+                                className="w-full px-4 py-3 text-left flex items-center justify-between hover:bg-gray-50 transition-colors"
                               >
-                                <span className="font-medium text-secondary-900">
+                                <span className="font-medium text-gray-900">
                                   {faq.question}
                                 </span>
                                 {expandedFaq === faqId ? (
-                                  <ChevronUp className="w-5 h-5 text-secondary-500" />
+                                  <ChevronUp className="w-5 h-5 text-gray-500" />
                                 ) : (
-                                  <ChevronDown className="w-5 h-5 text-secondary-500" />
+                                  <ChevronDown className="w-5 h-5 text-gray-500" />
                                 )}
                               </button>
                               {expandedFaq === faqId && (
-                                <div className="px-4 pb-3 text-secondary-700 border-t border-secondary-100">
+                                <div className="px-4 pb-3 text-gray-700 border-t border-gray-100">
                                   {faq.answer}
                                 </div>
                               )}
@@ -262,10 +262,10 @@ export default function HelpPage() {
         {/* Still Need Help */}
         <Card className="mt-8">
           <CardContent className="text-center py-8">
-            <h3 className="text-xl font-semibold text-secondary-900 mb-2">
+            <h3 className="text-xl font-semibold text-gray-900 mb-2">
               Still need help?
             </h3>
-            <p className="text-secondary-600 mb-6">
+            <p className="text-gray-600 mb-6">
               Can't find what you're looking for? Our support team is here to help.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

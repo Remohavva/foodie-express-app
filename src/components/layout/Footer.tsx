@@ -28,7 +28,7 @@ export function Footer() {
   ]
 
   return (
-    <footer className="bg-secondary-900 text-white">
+    <footer className="bg-gray-900 text-white">
       <div className="container py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company */}
@@ -39,7 +39,7 @@ export function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-secondary-300 hover:text-white transition-colors"
+                    className="text-gray-300 hover:text-white transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -56,7 +56,7 @@ export function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-secondary-300 hover:text-white transition-colors"
+                    className="text-gray-300 hover:text-white transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -73,7 +73,7 @@ export function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-secondary-300 hover:text-white transition-colors"
+                    className="text-gray-300 hover:text-white transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -90,7 +90,7 @@ export function Footer() {
                 <Link
                   key={city}
                   href={`/city/${city.toLowerCase()}`}
-                  className="text-secondary-300 hover:text-white transition-colors"
+                  className="text-gray-300 hover:text-white transition-colors"
                 >
                   {city}
                 </Link>
@@ -100,34 +100,34 @@ export function Footer() {
         </div>
 
         {/* Bottom Section */}
-        <div className="border-t border-secondary-700 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+        <div className="border-t border-gray-700 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
           <div className="flex items-center space-x-2 mb-4 md:mb-0">
-            <div className="w-8 h-8 bg-primary-500 rounded-lg flex items-center justify-center">
+            <div className="w-8 h-8 bg-orange-500 rounded-lg flex items-center justify-center">
               <span className="text-white font-bold text-lg">F</span>
             </div>
             <span className="text-xl font-bold">FoodieExpress</span>
           </div>
 
           <div className="flex items-center space-x-4">
-            <span className="text-secondary-400 text-sm">Follow us</span>
+            <span className="text-gray-400 text-sm">Follow us</span>
             <div className="flex space-x-3">
-              <Link href="#" className="text-secondary-400 hover:text-white transition-colors">
+              <Link href="#" className="text-gray-400 hover:text-white transition-colors">
                 <Facebook className="w-5 h-5" />
               </Link>
-              <Link href="#" className="text-secondary-400 hover:text-white transition-colors">
+              <Link href="#" className="text-gray-400 hover:text-white transition-colors">
                 <Twitter className="w-5 h-5" />
               </Link>
-              <Link href="#" className="text-secondary-400 hover:text-white transition-colors">
+              <Link href="#" className="text-gray-400 hover:text-white transition-colors">
                 <Instagram className="w-5 h-5" />
               </Link>
-              <Link href="#" className="text-secondary-400 hover:text-white transition-colors">
+              <Link href="#" className="text-gray-400 hover:text-white transition-colors">
                 <Youtube className="w-5 h-5" />
               </Link>
             </div>
           </div>
         </div>
 
-        <div className="text-center text-secondary-400 text-sm mt-4">
+        <div className="text-center text-gray-400 text-sm mt-4">
           © 2024 FoodieExpress. All rights reserved.
         </div>
       </div>

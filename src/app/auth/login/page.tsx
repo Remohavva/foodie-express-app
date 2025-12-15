@@ -60,15 +60,15 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="min-h-screen bg-secondary-50 flex items-center justify-center py-12 px-4">
+    <div className="min-h-screen bg-gray-50 flex items-center justify-center py-12 px-4">
       <div className="w-full max-w-md">
         {/* Logo */}
         <div className="text-center mb-8">
           <Link href="/" className="inline-flex items-center space-x-2">
-            <div className="w-10 h-10 bg-primary-500 rounded-lg flex items-center justify-center">
+            <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center">
               <span className="text-white font-bold text-xl">F</span>
             </div>
-            <span className="text-2xl font-bold text-secondary-900">FoodieExpress</span>
+            <span className="text-2xl font-bold text-gray-900">FoodieExpress</span>
           </Link>
         </div>
 
@@ -84,7 +84,7 @@ export default function LoginPage() {
             <form onSubmit={handleSubmit} className="space-y-4">
               {/* Email */}
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-secondary-700 mb-1">
+                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
                   Email Address
                 </label>
                 <Input
@@ -100,7 +100,7 @@ export default function LoginPage() {
 
               {/* Password */}
               <div>
-                <label htmlFor="password" className="block text-sm font-medium text-secondary-700 mb-1">
+                <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-1">
                   Password
                 </label>
                 <div className="relative">
@@ -115,7 +115,7 @@ export default function LoginPage() {
                   />
                   <button
                     type="button"
-                    className="absolute right-3 top-3 text-secondary-500 hover:text-secondary-700"
+                    className="absolute right-3 top-3 text-gray-500 hover:text-gray-700"
                     onClick={() => setShowPassword(!showPassword)}
                   >
                     {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
@@ -127,7 +127,7 @@ export default function LoginPage() {
               <div className="text-right">
                 <Link
                   href="/auth/forgot-password"
-                  className="text-sm text-primary-500 hover:text-primary-600 transition-colors"
+                  className="text-sm text-orange-500 hover:text-orange-600 transition-colors"
                 >
                   Forgot Password?
                 </Link>
@@ -146,10 +146,10 @@ export default function LoginPage() {
             {/* Divider */}
             <div className="relative my-6">
               <div className="absolute inset-0 flex items-center">
-                <div className="w-full border-t border-secondary-300" />
+                <div className="w-full border-t border-gray-300" />
               </div>
               <div className="relative flex justify-center text-sm">
-                <span className="px-2 bg-white text-secondary-500">Or continue with</span>
+                <span className="px-2 bg-white text-gray-500">Or continue with</span>
               </div>
             </div>
 
@@ -175,11 +175,11 @@ export default function LoginPage() {
 
             {/* Sign Up Link */}
             <div className="text-center mt-6">
-              <p className="text-sm text-secondary-600">
+              <p className="text-sm text-gray-600">
                 Don't have an account?{' '}
                 <Link
                   href="/auth/signup"
-                  className="text-primary-500 hover:text-primary-600 font-medium transition-colors"
+                  className="text-orange-500 hover:text-orange-600 font-medium transition-colors"
                 >
                   Sign up
                 </Link>

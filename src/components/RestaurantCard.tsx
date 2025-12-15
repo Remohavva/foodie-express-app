@@ -86,7 +86,7 @@ export function RestaurantCard({ restaurant }: RestaurantCardProps) {
 
           {/* Distance */}
           {restaurant.distance && (
-            <div className="flex items-center space-x-1 text-secondary-500 text-xs mt-2">
+            <div className="flex items-center space-x-1 text-gray-500 text-xs mt-2">
               <MapPin className="w-3 h-3" />
               <span>{restaurant.distance} km away</span>
             </div>
@@ -94,8 +94,8 @@ export function RestaurantCard({ restaurant }: RestaurantCardProps) {
 
           {/* Additional Offers */}
           {restaurant.offers && restaurant.offers.length > 1 && (
-            <div className="mt-3 pt-3 border-t border-secondary-100">
-              <p className="text-xs text-secondary-600">
+            <div className="mt-3 pt-3 border-t border-gray-100">
+              <p className="text-xs text-gray-600">
                 +{restaurant.offers.length - 1} more offer{restaurant.offers.length > 2 ? 's' : ''}
               </p>
             </div>

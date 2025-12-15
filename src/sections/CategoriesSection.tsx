@@ -7,10 +7,10 @@ export function CategoriesSection() {
     <section className="py-12 bg-white">
       <div className="container">
         <div className="text-center mb-8">
-          <h2 className="text-2xl md:text-3xl font-bold text-secondary-900 mb-2">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
             What's on your mind?
           </h2>
-          <p className="text-secondary-600">
+          <p className="text-gray-600">
             Explore cuisines and dishes from your favorite restaurants
           </p>
         </div>
@@ -31,7 +31,7 @@ export function CategoriesSection() {
                   className="object-cover group-hover:scale-110 transition-transform duration-300"
                 />
               </div>
-              <h3 className="text-sm md:text-base font-medium text-secondary-900 group-hover:text-primary-500 transition-colors">
+              <h3 className="text-sm md:text-base font-medium text-gray-900 group-hover:text-orange-500 transition-colors">
                 {category.name}
               </h3>
             </Link>
@@ -42,7 +42,7 @@ export function CategoriesSection() {
         <div className="text-center mt-8">
           <Link
             href="/restaurants"
-            className="inline-flex items-center text-primary-500 hover:text-primary-600 font-medium transition-colors"
+            className="inline-flex items-center text-orange-500 hover:text-orange-600 font-medium transition-colors"
           >
             View All Categories
             <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

@@ -19,7 +19,7 @@ export default function OrderSuccessPage() {
   }, [])
 
   return (
-    <div className="min-h-screen bg-secondary-50 py-12">
+    <div className="min-h-screen bg-gray-50 py-12">
       <div className="container max-w-2xl">
         {/* Success Animation */}
         <div className="text-center mb-8">
@@ -27,15 +27,15 @@ export default function OrderSuccessPage() {
             <CheckCircle className="w-12 h-12 text-green-600" />
           </div>
           
-          <h1 className="text-3xl md:text-4xl font-bold text-secondary-900 mb-2">
+          <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">
             Order Placed Successfully!
           </h1>
           
-          <p className="text-lg text-secondary-600 mb-6">
+          <p className="text-lg text-gray-600 mb-6">
             Thank you for your order. We're preparing your delicious meal.
           </p>
 
-          <div className="bg-primary-50 border border-primary-200 rounded-lg p-4 inline-block">
+          <div className="bg-orange-50 border border-primary-200 rounded-lg p-4 inline-block">
             <p className="text-primary-800 font-medium">
               Order ID: <span className="font-bold">{orderNumber}</span>
             </p>
@@ -48,7 +48,7 @@ export default function OrderSuccessPage() {
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center space-x-2">
-                <Clock className="w-5 h-5 text-primary-500" />
+                <Clock className="w-5 h-5 text-orange-500" />
                 <span>Delivery Information</span>
               </CardTitle>
             </CardHeader>
@@ -75,16 +75,16 @@ export default function OrderSuccessPage() {
                 </div>
               </div>
 
-              <div className="flex items-start space-x-3 p-4 border border-secondary-200 rounded-lg">
-                <MapPin className="w-5 h-5 text-secondary-500 mt-0.5" />
+              <div className="flex items-start space-x-3 p-4 border border-gray-200 rounded-lg">
+                <MapPin className="w-5 h-5 text-gray-500 mt-0.5" />
                 <div>
-                  <p className="font-medium text-secondary-900 mb-1">
+                  <p className="font-medium text-gray-900 mb-1">
                     Delivering to Home
                   </p>
-                  <p className="text-secondary-700">
+                  <p className="text-gray-700">
                     123 Main Street, Banjara Hills
                   </p>
-                  <p className="text-secondary-600">
+                  <p className="text-gray-600">
                     Near City Center Mall, Hyderabad, 500034
                   </p>
                 </div>
@@ -110,7 +110,7 @@ export default function OrderSuccessPage() {
                     <div className={`w-4 h-4 rounded-full border-2 ${
                       step.completed 
                         ? 'bg-green-500 border-green-500' 
-                        : 'border-secondary-300'
+                        : 'border-gray-300'
                     }`}>
                       {step.completed && (
                         <CheckCircle className="w-4 h-4 text-white" />
@@ -118,12 +118,12 @@ export default function OrderSuccessPage() {
                     </div>
                     <div className="flex-1">
                       <p className={`font-medium ${
-                        step.completed ? 'text-green-700' : 'text-secondary-600'
+                        step.completed ? 'text-green-700' : 'text-gray-600'
                       }`}>
                         {step.status}
                       </p>
                     </div>
-                    <p className="text-sm text-secondary-500">
+                    <p className="text-sm text-gray-500">
                       {step.time}
                     </p>
                   </div>
@@ -136,25 +136,25 @@ export default function OrderSuccessPage() {
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center space-x-2">
-                <Phone className="w-5 h-5 text-primary-500" />
+                <Phone className="w-5 h-5 text-orange-500" />
                 <span>Need Help?</span>
               </CardTitle>
             </CardHeader>
             <CardContent>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="text-center p-4 border border-secondary-200 rounded-lg">
-                  <p className="font-medium text-secondary-900 mb-1">
+                <div className="text-center p-4 border border-gray-200 rounded-lg">
+                  <p className="font-medium text-gray-900 mb-1">
                     Call Restaurant
                   </p>
-                  <p className="text-primary-600 font-medium">
+                  <p className="text-orange-600 font-medium">
                     +91 98765 43210
                   </p>
                 </div>
-                <div className="text-center p-4 border border-secondary-200 rounded-lg">
-                  <p className="font-medium text-secondary-900 mb-1">
+                <div className="text-center p-4 border border-gray-200 rounded-lg">
+                  <p className="font-medium text-gray-900 mb-1">
                     Customer Support
                   </p>
-                  <p className="text-primary-600 font-medium">
+                  <p className="text-orange-600 font-medium">
                     +91 98765 43211
                   </p>
                 </div>
@@ -179,10 +179,10 @@ export default function OrderSuccessPage() {
           {/* Share Experience */}
           <Card>
             <CardContent className="text-center py-6">
-              <h3 className="font-semibold text-secondary-900 mb-2">
+              <h3 className="font-semibold text-gray-900 mb-2">
                 Enjoying our service?
               </h3>
-              <p className="text-secondary-600 mb-4">
+              <p className="text-gray-600 mb-4">
                 Share your experience and help others discover great food!
               </p>
               <div className="flex justify-center space-x-3">

@@ -12,22 +12,22 @@ export function RestaurantsSection() {
     .slice(0, 6)
 
   return (
-    <section className="py-12 bg-secondary-50">
+    <section className="py-12 bg-gray-50">
       <div className="container">
         {/* Top Rated Restaurants */}
         <div className="mb-12">
           <div className="flex items-center justify-between mb-6">
             <div>
-              <h2 className="text-2xl md:text-3xl font-bold text-secondary-900 mb-2">
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
                 Top Rated Near You
               </h2>
-              <p className="text-secondary-600">
+              <p className="text-gray-600">
                 Highly rated restaurants in your area
               </p>
             </div>
             <Link
               href="/restaurants?sort=rating"
-              className="text-primary-500 hover:text-primary-600 font-medium transition-colors"
+              className="text-orange-500 hover:text-orange-600 font-medium transition-colors"
             >
               View All
             </Link>
@@ -44,16 +44,16 @@ export function RestaurantsSection() {
         <div>
           <div className="flex items-center justify-between mb-6">
             <div>
-              <h2 className="text-2xl md:text-3xl font-bold text-secondary-900 mb-2">
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
                 Restaurants Nearby
               </h2>
-              <p className="text-secondary-600">
+              <p className="text-gray-600">
                 Quick delivery from restaurants close to you
               </p>
             </div>
             <Link
               href="/restaurants?sort=distance"
-              className="text-primary-500 hover:text-primary-600 font-medium transition-colors"
+              className="text-orange-500 hover:text-orange-600 font-medium transition-colors"
             >
               View All
             </Link>
@@ -68,15 +68,15 @@ export function RestaurantsSection() {
 
         {/* CTA Section */}
         <div className="mt-12 text-center bg-white rounded-2xl p-8 shadow-sm">
-          <h3 className="text-xl font-bold text-secondary-900 mb-2">
+          <h3 className="text-xl font-bold text-gray-900 mb-2">
             Can't find what you're looking for?
           </h3>
-          <p className="text-secondary-600 mb-4">
+          <p className="text-gray-600 mb-4">
             Explore all restaurants and cuisines in your area
           </p>
           <Link
             href="/restaurants"
-            className="inline-flex items-center bg-primary-500 hover:bg-primary-600 text-white font-medium py-3 px-6 rounded-lg transition-colors"
+            className="inline-flex items-center bg-orange-500 hover:bg-orange-600 text-white font-medium py-3 px-6 rounded-lg transition-colors"
           >
             Browse All Restaurants
           </Link>

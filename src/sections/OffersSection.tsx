@@ -60,10 +60,10 @@ export function OffersSection() {
   }
 
   return (
-    <section className="py-8 bg-secondary-50">
+    <section className="py-8 bg-gray-50">
       <div className="container">
         <div className="flex items-center justify-between mb-6">
-          <h2 className="text-2xl md:text-3xl font-bold text-secondary-900">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
             Best Offers for You
           </h2>
           <div className="flex space-x-2">
@@ -90,7 +90,7 @@ export function OffersSection() {
                       <h3 className="text-4xl font-bold mb-2">{offer.title}</h3>
                       <p className="text-xl mb-2">{offer.subtitle}</p>
                       <p className="text-lg opacity-90 mb-4">{offer.description}</p>
-                      <Button variant="secondary" className="bg-white text-secondary-900 hover:bg-secondary-100">
+                      <Button variant="secondary" className="bg-white text-gray-900 hover:bg-gray-100">
                         Order Now
                       </Button>
                     </div>
@@ -118,7 +118,7 @@ export function OffersSection() {
                   <h3 className="text-2xl font-bold mb-1">{offer.title}</h3>
                   <p className="text-lg mb-1">{offer.subtitle}</p>
                   <p className="text-sm opacity-90 mb-3">{offer.description}</p>
-                  <Button variant="secondary" size="sm" className="bg-white text-secondary-900 hover:bg-secondary-100">
+                  <Button variant="secondary" size="sm" className="bg-white text-gray-900 hover:bg-gray-100">
                     Order Now
                   </Button>
                 </div>
@@ -141,7 +141,7 @@ export function OffersSection() {
             <button
               key={index}
               className={`w-3 h-3 rounded-full transition-colors ${
-                index === currentSlide ? 'bg-primary-500' : 'bg-secondary-300'
+                index === currentSlide ? 'bg-orange-500' : 'bg-gray-300'
               }`}
               onClick={() => setCurrentSlide(index)}
             />

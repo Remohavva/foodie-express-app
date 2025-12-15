@@ -16,7 +16,7 @@ export function HeroSection() {
   }
 
   return (
-    <section className="relative bg-gradient-to-br from-primary-500 via-primary-600 to-primary-700 text-white">
+    <section className="relative bg-gradient-to-br from-orange-500 via-orange-600 to-orange-700 text-white">
       <div className="absolute inset-0 bg-black/20"></div>
       
       <div className="relative container py-16 md:py-24">
@@ -28,20 +28,20 @@ export function HeroSection() {
             <span className="text-yellow-300">Order Now!</span>
           </h1>
           
-          <p className="text-xl md:text-2xl mb-8 text-primary-100 animate-slide-up">
+          <p className="text-xl md:text-2xl mb-8 text-orange-100 animate-slide-up">
             Discover the best food & drinks from restaurants near you
           </p>
 
           {/* Search Section */}
           <div className="bg-white rounded-2xl p-6 shadow-2xl max-w-2xl mx-auto animate-slide-up">
             {/* Location */}
-            <div className="flex items-center mb-4 pb-4 border-b border-secondary-200">
-              <MapPin className="w-5 h-5 text-primary-500 mr-3" />
+            <div className="flex items-center mb-4 pb-4 border-b border-gray-200">
+              <MapPin className="w-5 h-5 text-orange-500 mr-3" />
               <div className="flex-1 text-left">
-                <p className="text-sm text-secondary-600">Deliver to</p>
-                <p className="font-semibold text-secondary-900">{location}</p>
+                <p className="text-sm text-gray-600">Deliver to</p>
+                <p className="font-semibold text-gray-900">{location}</p>
               </div>
-              <Button variant="ghost" size="sm" className="text-primary-500">
+              <Button variant="ghost" size="sm" className="text-orange-500">
                 Change
               </Button>
             </div>
@@ -55,7 +55,7 @@ export function HeroSection() {
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   onKeyPress={(e) => e.key === 'Enter' && handleSearch()}
-                  className="border-0 bg-secondary-50 text-secondary-900 placeholder:text-secondary-500"
+                  className="border-0 bg-gray-50 text-gray-900 placeholder:text-gray-500"
                 />
               </div>
               <Button onClick={handleSearch} className="px-6">
@@ -67,7 +67,7 @@ export function HeroSection() {
 
           {/* Popular Searches */}
           <div className="mt-8 animate-fade-in">
-            <p className="text-primary-100 mb-3">Popular searches:</p>
+            <p className="text-orange-100 mb-3">Popular searches:</p>
             <div className="flex flex-wrap justify-center gap-2">
               {['Biryani', 'Pizza', 'Burger', 'Chinese', 'South Indian'].map((item) => (
                 <button

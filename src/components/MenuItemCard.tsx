@@ -71,7 +71,7 @@ export function MenuItemCard({ item, restaurantId }: MenuItemCardProps) {
             </div>
 
             {/* Item Name */}
-            <h3 className="font-semibold text-secondary-900 mb-2 text-lg">
+            <h3 className="font-semibold text-gray-900 mb-2 text-lg">
               {item.name}
             </h3>
 
@@ -79,7 +79,7 @@ export function MenuItemCard({ item, restaurantId }: MenuItemCardProps) {
             {item.rating && (
               <div className="flex items-center space-x-1 mb-2">
                 <Star className="w-4 h-4 fill-current text-yellow-400" />
-                <span className="text-sm font-medium text-secondary-700">
+                <span className="text-sm font-medium text-gray-700">
                   {formatRating(item.rating)}
                 </span>
               </div>
@@ -87,13 +87,13 @@ export function MenuItemCard({ item, restaurantId }: MenuItemCardProps) {
 
             {/* Price */}
             <div className="mb-3">
-              <span className="text-lg font-bold text-secondary-900">
+              <span className="text-lg font-bold text-gray-900">
                 {formatPrice(item.price)}
               </span>
             </div>
 
             {/* Description */}
-            <p className="text-sm text-secondary-600 mb-4 line-clamp-2">
+            <p className="text-sm text-gray-600 mb-4 line-clamp-2">
               {item.description}
             </p>
 
@@ -112,16 +112,16 @@ export function MenuItemCard({ item, restaurantId }: MenuItemCardProps) {
                 <div className="flex items-center space-x-3">
                   <button
                     onClick={() => handleQuantityChange(currentQuantity - 1)}
-                    className="w-8 h-8 rounded-full border border-primary-500 text-primary-500 flex items-center justify-center hover:bg-primary-50"
+                    className="w-8 h-8 rounded-full border border-orange-500 text-orange-500 flex items-center justify-center hover:bg-orange-50"
                   >
                     <Minus className="w-4 h-4" />
                   </button>
-                  <span className="font-medium text-primary-500 min-w-[2rem] text-center">
+                  <span className="font-medium text-orange-500 min-w-[2rem] text-center">
                     {currentQuantity}
                   </span>
                   <button
                     onClick={() => handleQuantityChange(currentQuantity + 1)}
-                    className="w-8 h-8 rounded-full bg-primary-500 text-white flex items-center justify-center hover:bg-primary-600"
+                    className="w-8 h-8 rounded-full bg-orange-500 text-white flex items-center justify-center hover:bg-orange-600"
                   >
                     <Plus className="w-4 h-4" />
                   </button>

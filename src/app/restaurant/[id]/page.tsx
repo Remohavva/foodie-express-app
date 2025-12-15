@@ -61,10 +61,10 @@ export default function RestaurantDetailPage() {
 
   if (!restaurant) {
     return (
-      <div className="min-h-screen bg-secondary-50 flex items-center justify-center">
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary-500 mx-auto mb-4"></div>
-          <p className="text-secondary-600">Loading restaurant...</p>
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-orange-500 mx-auto mb-4"></div>
+          <p className="text-gray-600">Loading restaurant...</p>
         </div>
       </div>
     )
@@ -73,7 +73,7 @@ export default function RestaurantDetailPage() {
   const categories = ['all', ...Array.from(new Set(menu.map(item => item.category)))]
 
   return (
-    <div className="min-h-screen bg-secondary-50">
+    <div className="min-h-screen bg-gray-50">
       {/* Restaurant Header */}
       <div className="relative h-64 md:h-80">
         <Image
@@ -127,7 +127,7 @@ export default function RestaurantDetailPage() {
       </div>
 
       {/* Restaurant Info */}
-      <div className="bg-white border-b border-secondary-200">
+      <div className="bg-white border-b border-gray-200">
         <div className="container py-4">
           <div className="flex flex-col md:flex-row md:items-center justify-between">
             <div className="flex items-center space-x-4 mb-4 md:mb-0">
@@ -137,7 +137,7 @@ export default function RestaurantDetailPage() {
                 }`} />
                 {restaurant.isVeg ? 'Pure Veg' : 'Non-Veg'}
               </Badge>
-              <span className="text-secondary-600">
+              <span className="text-gray-600">
                 {formatPrice(restaurant.costForTwo)} for two
               </span>
             </div>
@@ -163,7 +163,7 @@ export default function RestaurantDetailPage() {
               {/* Search Menu */}
               <div className="bg-white rounded-lg p-4 shadow-sm">
                 <div className="relative">
-                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-secondary-500 w-4 h-4" />
+                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500 w-4 h-4" />
                   <Input
                     type="text"
                     placeholder="Search menu..."
@@ -181,15 +181,15 @@ export default function RestaurantDetailPage() {
                     type="checkbox"
                     checked={isVegOnly}
                     onChange={(e) => setIsVegOnly(e.target.checked)}
-                    className="text-primary-500 focus:ring-primary-500 rounded"
+                    className="text-orange-500 focus:ring-orange-500 rounded"
                   />
-                  <span className="font-medium text-secondary-900">Veg Only</span>
+                  <span className="font-medium text-gray-900">Veg Only</span>
                 </label>
               </div>
 
               {/* Categories */}
               <div className="bg-white rounded-lg p-4 shadow-sm">
-                <h3 className="font-semibold text-secondary-900 mb-3">Categories</h3>
+                <h3 className="font-semibold text-gray-900 mb-3">Categories</h3>
                 <div className="space-y-2">
                   {categories.map((category) => (
                     <button
@@ -197,8 +197,8 @@ export default function RestaurantDetailPage() {
                       onClick={() => setSelectedCategory(category)}
                       className={`w-full text-left px-3 py-2 rounded-lg text-sm transition-colors ${
                         selectedCategory === category
-                          ? 'bg-primary-500 text-white'
-                          : 'text-secondary-700 hover:bg-secondary-100'
+                          ? 'bg-orange-500 text-white'
+                          : 'text-gray-700 hover:bg-gray-100'
                       }`}
                     >
                       {category === 'all' ? 'All Items' : category}
@@ -219,13 +219,13 @@ export default function RestaurantDetailPage() {
           <div className="lg:col-span-3">
             {filteredMenu.length === 0 ? (
               <div className="text-center py-12">
-                <div className="w-24 h-24 mx-auto mb-4 bg-secondary-200 rounded-full flex items-center justify-center">
-                  <Search className="w-8 h-8 text-secondary-500" />
+                <div className="w-24 h-24 mx-auto mb-4 bg-gray-200 rounded-full flex items-center justify-center">
+                  <Search className="w-8 h-8 text-gray-500" />
                 </div>
-                <h3 className="text-lg font-semibold text-secondary-900 mb-2">
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">
                   No items found
                 </h3>
-                <p className="text-secondary-600">
+                <p className="text-gray-600">
                   Try adjusting your search or filters
                 </p>
               </div>
@@ -241,7 +241,7 @@ export default function RestaurantDetailPage() {
 
                     return (
                       <div key={category} id={category} className="scroll-mt-6">
-                        <h2 className="text-xl font-semibold text-secondary-900 mb-4 pb-2 border-b border-secondary-200">
+                        <h2 className="text-xl font-semibold text-gray-900 mb-4 pb-2 border-b border-gray-200">
                           {category} ({categoryItems.length})
                         </h2>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

@@ -34,9 +34,9 @@ export default function ProfilePage() {
   ]
 
   return (
-    <div className="min-h-screen bg-secondary-50 py-6">
+    <div className="min-h-screen bg-gray-50 py-6">
       <div className="container max-w-4xl">
-        <h1 className="text-2xl md:text-3xl font-bold text-secondary-900 mb-6">
+        <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
           My Profile
         </h1>
 
@@ -61,7 +61,7 @@ export default function ProfilePage() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <div>
-                  <label className="block text-sm font-medium text-secondary-700 mb-1">
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
                     Full Name
                   </label>
                   {isEditing ? (
@@ -70,12 +70,12 @@ export default function ProfilePage() {
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     />
                   ) : (
-                    <p className="text-secondary-900">{formData.name}</p>
+                    <p className="text-gray-900">{formData.name}</p>
                   )}
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-secondary-700 mb-1">
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
                     Email Address
                   </label>
                   {isEditing ? (
@@ -85,12 +85,12 @@ export default function ProfilePage() {
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     />
                   ) : (
-                    <p className="text-secondary-900">{formData.email}</p>
+                    <p className="text-gray-900">{formData.email}</p>
                   )}
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-secondary-700 mb-1">
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
                     Phone Number
                   </label>
                   {isEditing ? (
@@ -100,7 +100,7 @@ export default function ProfilePage() {
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                     />
                   ) : (
-                    <p className="text-secondary-900">{formData.phone}</p>
+                    <p className="text-gray-900">{formData.phone}</p>
                   )}
                 </div>
 
@@ -122,9 +122,9 @@ export default function ProfilePage() {
               </CardHeader>
               <CardContent>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                  <div className="text-center p-4 bg-primary-50 rounded-lg">
-                    <p className="text-2xl font-bold text-primary-600">24</p>
-                    <p className="text-sm text-primary-700">Total Orders</p>
+                  <div className="text-center p-4 bg-orange-50 rounded-lg">
+                    <p className="text-2xl font-bold text-orange-600">24</p>
+                    <p className="text-sm text-orange-700">Total Orders</p>
                   </div>
                   <div className="text-center p-4 bg-green-50 rounded-lg">
                     <p className="text-2xl font-bold text-green-600">₹2,450</p>
@@ -155,13 +155,13 @@ export default function ProfilePage() {
                     { action: 'Updated delivery address', time: '3 days ago' },
                     { action: 'Ordered from Green Garden', time: '5 days ago', amount: '₹180' }
                   ].map((activity, index) => (
-                    <div key={index} className="flex items-center justify-between py-2 border-b border-secondary-100 last:border-b-0">
+                    <div key={index} className="flex items-center justify-between py-2 border-b border-gray-100 last:border-b-0">
                       <div>
-                        <p className="font-medium text-secondary-900">{activity.action}</p>
-                        <p className="text-sm text-secondary-600">{activity.time}</p>
+                        <p className="font-medium text-gray-900">{activity.action}</p>
+                        <p className="text-sm text-gray-600">{activity.time}</p>
                       </div>
                       {activity.amount && (
-                        <p className="font-medium text-secondary-900">{activity.amount}</p>
+                        <p className="font-medium text-gray-900">{activity.amount}</p>
                       )}
                     </div>
                   ))}
@@ -175,11 +175,11 @@ export default function ProfilePage() {
             {/* Profile Picture */}
             <Card>
               <CardContent className="text-center py-6">
-                <div className="w-24 h-24 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <User className="w-12 h-12 text-primary-600" />
+                <div className="w-24 h-24 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <User className="w-12 h-12 text-orange-600" />
                 </div>
-                <h3 className="font-semibold text-secondary-900 mb-1">{formData.name}</h3>
-                <p className="text-secondary-600 text-sm mb-4">Member since Jan 2024</p>
+                <h3 className="font-semibold text-gray-900 mb-1">{formData.name}</h3>
+                <p className="text-gray-600 text-sm mb-4">Member since Jan 2024</p>
                 <Button variant="outline" size="sm">
                   Change Photo
                 </Button>
@@ -198,14 +198,14 @@ export default function ProfilePage() {
                     <a
                       key={item.label}
                       href={item.href}
-                      className="flex items-center justify-between p-3 rounded-lg hover:bg-secondary-50 transition-colors"
+                      className="flex items-center justify-between p-3 rounded-lg hover:bg-gray-50 transition-colors"
                     >
                       <div className="flex items-center space-x-3">
-                        <Icon className="w-5 h-5 text-secondary-600" />
-                        <span className="font-medium text-secondary-900">{item.label}</span>
+                        <Icon className="w-5 h-5 text-gray-600" />
+                        <span className="font-medium text-gray-900">{item.label}</span>
                       </div>
                       {item.count && (
-                        <span className="bg-secondary-100 text-secondary-700 text-xs px-2 py-1 rounded-full">
+                        <span className="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded-full">
                           {item.count}
                         </span>
                       )}

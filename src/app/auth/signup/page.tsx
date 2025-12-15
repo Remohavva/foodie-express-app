@@ -82,15 +82,15 @@ export default function SignupPage() {
   }
 
   return (
-    <div className="min-h-screen bg-secondary-50 flex items-center justify-center py-12 px-4">
+    <div className="min-h-screen bg-gray-50 flex items-center justify-center py-12 px-4">
       <div className="w-full max-w-md">
         {/* Logo */}
         <div className="text-center mb-8">
           <Link href="/" className="inline-flex items-center space-x-2">
-            <div className="w-10 h-10 bg-primary-500 rounded-lg flex items-center justify-center">
+            <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center">
               <span className="text-white font-bold text-xl">F</span>
             </div>
-            <span className="text-2xl font-bold text-secondary-900">FoodieExpress</span>
+            <span className="text-2xl font-bold text-gray-900">FoodieExpress</span>
           </Link>
         </div>
 
@@ -106,7 +106,7 @@ export default function SignupPage() {
             <form onSubmit={handleSubmit} className="space-y-4">
               {/* Name */}
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-secondary-700 mb-1">
+                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
                   Full Name
                 </label>
                 <Input
@@ -122,7 +122,7 @@ export default function SignupPage() {
 
               {/* Email */}
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-secondary-700 mb-1">
+                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
                   Email Address
                 </label>
                 <Input
@@ -138,7 +138,7 @@ export default function SignupPage() {
 
               {/* Phone */}
               <div>
-                <label htmlFor="phone" className="block text-sm font-medium text-secondary-700 mb-1">
+                <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
                   Phone Number
                 </label>
                 <Input
@@ -154,7 +154,7 @@ export default function SignupPage() {
 
               {/* Password */}
               <div>
-                <label htmlFor="password" className="block text-sm font-medium text-secondary-700 mb-1">
+                <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-1">
                   Password
                 </label>
                 <div className="relative">
@@ -169,7 +169,7 @@ export default function SignupPage() {
                   />
                   <button
                     type="button"
-                    className="absolute right-3 top-3 text-secondary-500 hover:text-secondary-700"
+                    className="absolute right-3 top-3 text-gray-500 hover:text-gray-700"
                     onClick={() => setShowPassword(!showPassword)}
                   >
                     {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
@@ -179,7 +179,7 @@ export default function SignupPage() {
 
               {/* Confirm Password */}
               <div>
-                <label htmlFor="confirmPassword" className="block text-sm font-medium text-secondary-700 mb-1">
+                <label htmlFor="confirmPassword" className="block text-sm font-medium text-gray-700 mb-1">
                   Confirm Password
                 </label>
                 <div className="relative">
@@ -194,7 +194,7 @@ export default function SignupPage() {
                   />
                   <button
                     type="button"
-                    className="absolute right-3 top-3 text-secondary-500 hover:text-secondary-700"
+                    className="absolute right-3 top-3 text-gray-500 hover:text-gray-700"
                     onClick={() => setShowConfirmPassword(!showConfirmPassword)}
                   >
                     {showConfirmPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
@@ -203,13 +203,13 @@ export default function SignupPage() {
               </div>
 
               {/* Terms */}
-              <div className="text-xs text-secondary-600">
+              <div className="text-xs text-gray-600">
                 By creating an account, you agree to our{' '}
-                <Link href="/terms" className="text-primary-500 hover:text-primary-600">
+                <Link href="/terms" className="text-orange-500 hover:text-orange-600">
                   Terms of Service
                 </Link>{' '}
                 and{' '}
-                <Link href="/privacy" className="text-primary-500 hover:text-primary-600">
+                <Link href="/privacy" className="text-orange-500 hover:text-orange-600">
                   Privacy Policy
                 </Link>
               </div>
@@ -226,11 +226,11 @@ export default function SignupPage() {
 
             {/* Sign In Link */}
             <div className="text-center mt-6">
-              <p className="text-sm text-secondary-600">
+              <p className="text-sm text-gray-600">
                 Already have an account?{' '}
                 <Link
                   href="/auth/login"
-                  className="text-primary-500 hover:text-primary-600 font-medium transition-colors"
+                  className="text-orange-500 hover:text-orange-600 font-medium transition-colors"
                 >
                   Sign in
                 </Link>

@@ -87,12 +87,12 @@ export default function SearchPage() {
   const totalResults = searchResults.restaurants.length + searchResults.dishes.length
 
   return (
-    <div className="min-h-screen bg-secondary-50">
+    <div className="min-h-screen bg-gray-50">
       <div className="container py-6">
         {/* Search Header */}
         <div className="bg-white rounded-xl shadow-sm p-6 mb-6">
           <div className="relative">
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-secondary-500 w-5 h-5" />
+            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500 w-5 h-5" />
             <Input
               type="text"
               placeholder="Search for restaurants, cuisines or dishes"
@@ -108,15 +108,15 @@ export default function SearchPage() {
               {/* Recent Searches */}
               <div>
                 <div className="flex items-center space-x-2 mb-3">
-                  <Clock className="w-4 h-4 text-secondary-500" />
-                  <h3 className="font-medium text-secondary-900">Recent Searches</h3>
+                  <Clock className="w-4 h-4 text-gray-500" />
+                  <h3 className="font-medium text-gray-900">Recent Searches</h3>
                 </div>
                 <div className="flex flex-wrap gap-2">
                   {recentSearches.map((search) => (
                     <button
                       key={search}
                       onClick={() => handleSearchClick(search)}
-                      className="px-3 py-1.5 bg-secondary-100 hover:bg-secondary-200 text-secondary-700 rounded-full text-sm transition-colors"
+                      className="px-3 py-1.5 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-full text-sm transition-colors"
                     >
                       {search}
                     </button>
@@ -127,15 +127,15 @@ export default function SearchPage() {
               {/* Trending Searches */}
               <div>
                 <div className="flex items-center space-x-2 mb-3">
-                  <TrendingUp className="w-4 h-4 text-primary-500" />
-                  <h3 className="font-medium text-secondary-900">Trending</h3>
+                  <TrendingUp className="w-4 h-4 text-orange-500" />
+                  <h3 className="font-medium text-gray-900">Trending</h3>
                 </div>
                 <div className="flex flex-wrap gap-2">
                   {trendingSearches.map((search) => (
                     <button
                       key={search}
                       onClick={() => handleSearchClick(search)}
-                      className="px-3 py-1.5 bg-primary-50 hover:bg-primary-100 text-primary-700 rounded-full text-sm transition-colors"
+                      className="px-3 py-1.5 bg-orange-50 hover:bg-orange-100 text-orange-700 rounded-full text-sm transition-colors"
                     >
                       {search}
                     </button>
@@ -151,18 +151,18 @@ export default function SearchPage() {
           <div>
             {isSearching ? (
               <div className="text-center py-12">
-                <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary-500 mx-auto mb-4"></div>
-                <p className="text-secondary-600">Searching...</p>
+                <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-orange-500 mx-auto mb-4"></div>
+                <p className="text-gray-600">Searching...</p>
               </div>
             ) : totalResults === 0 ? (
               <div className="text-center py-12">
-                <div className="w-24 h-24 mx-auto mb-4 bg-secondary-200 rounded-full flex items-center justify-center">
-                  <Search className="w-8 h-8 text-secondary-500" />
+                <div className="w-24 h-24 mx-auto mb-4 bg-gray-200 rounded-full flex items-center justify-center">
+                  <Search className="w-8 h-8 text-gray-500" />
                 </div>
-                <h3 className="text-lg font-semibold text-secondary-900 mb-2">
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">
                   No results found for "{query}"
                 </h3>
-                <p className="text-secondary-600 mb-4">
+                <p className="text-gray-600 mb-4">
                   Try searching for something else or check the spelling
                 </p>
               </div>
@@ -170,7 +170,7 @@ export default function SearchPage() {
               <div className="space-y-8">
                 {/* Results Summary */}
                 <div className="bg-white rounded-lg p-4">
-                  <p className="text-secondary-600">
+                  <p className="text-gray-600">
                     Found {totalResults} result{totalResults !== 1 ? 's' : ''} for "{query}"
                   </p>
                 </div>
@@ -178,7 +178,7 @@ export default function SearchPage() {
                 {/* Restaurants */}
                 {searchResults.restaurants.length > 0 && (
                   <div>
-                    <h2 className="text-xl font-semibold text-secondary-900 mb-4">
+                    <h2 className="text-xl font-semibold text-gray-900 mb-4">
                       Restaurants ({searchResults.restaurants.length})
                     </h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -192,7 +192,7 @@ export default function SearchPage() {
                 {/* Dishes */}
                 {searchResults.dishes.length > 0 && (
                   <div>
-                    <h2 className="text-xl font-semibold text-secondary-900 mb-4">
+                    <h2 className="text-xl font-semibold text-gray-900 mb-4">
                       Dishes ({searchResults.dishes.length})
                     </h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -207,22 +207,22 @@ export default function SearchPage() {
                               />
                             )}
                             <div className="flex-1">
-                              <h3 className="font-semibold text-secondary-900 mb-1">
+                              <h3 className="font-semibold text-gray-900 mb-1">
                                 {dish.name}
                               </h3>
-                              <p className="text-sm text-secondary-600 mb-2 line-clamp-2">
+                              <p className="text-sm text-gray-600 mb-2 line-clamp-2">
                                 {dish.description}
                               </p>
                               <div className="flex items-center justify-between">
                                 <div className="flex items-center space-x-2">
-                                  <span className="font-semibold text-secondary-900">
+                                  <span className="font-semibold text-gray-900">
                                     ₹{dish.price}
                                   </span>
                                   <div className={`w-3 h-3 rounded-full ${
                                     dish.isVeg ? 'bg-green-500' : 'bg-red-500'
                                   }`} />
                                 </div>
-                                <p className="text-sm text-primary-600 font-medium">
+                                <p className="text-sm text-orange-600 font-medium">
                                   from {dish.restaurantName}
                                 </p>
                               </div>

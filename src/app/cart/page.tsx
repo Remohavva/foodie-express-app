@@ -31,15 +31,15 @@ export default function CartPage() {
 
   if (items.length === 0) {
     return (
-      <div className="min-h-screen bg-secondary-50 flex items-center justify-center">
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
         <div className="text-center">
-          <div className="w-24 h-24 mx-auto mb-6 bg-secondary-200 rounded-full flex items-center justify-center">
-            <ShoppingBag className="w-10 h-10 text-secondary-500" />
+          <div className="w-24 h-24 mx-auto mb-6 bg-gray-200 rounded-full flex items-center justify-center">
+            <ShoppingBag className="w-10 h-10 text-gray-500" />
           </div>
-          <h2 className="text-2xl font-bold text-secondary-900 mb-2">
+          <h2 className="text-2xl font-bold text-gray-900 mb-2">
             Your cart is empty
           </h2>
-          <p className="text-secondary-600 mb-6">
+          <p className="text-gray-600 mb-6">
             Add some delicious items to get started
           </p>
           <Link href="/restaurants">
@@ -51,10 +51,10 @@ export default function CartPage() {
   }
 
   return (
-    <div className="min-h-screen bg-secondary-50 py-6">
+    <div className="min-h-screen bg-gray-50 py-6">
       <div className="container max-w-4xl">
         <div className="flex items-center justify-between mb-6">
-          <h1 className="text-2xl md:text-3xl font-bold text-secondary-900">
+          <h1 className="text-2xl md:text-3xl font-bold text-gray-900">
             Your Cart
           </h1>
           <Button
@@ -85,10 +85,10 @@ export default function CartPage() {
                     <div className="flex-1">
                       <div className="flex items-start justify-between">
                         <div>
-                          <h3 className="font-semibold text-secondary-900 mb-1">
+                          <h3 className="font-semibold text-gray-900 mb-1">
                             {item.menuItem.name}
                           </h3>
-                          <p className="text-sm text-secondary-600 mb-2 line-clamp-2">
+                          <p className="text-sm text-gray-600 mb-2 line-clamp-2">
                             {item.menuItem.description}
                           </p>
                           <div className="flex items-center space-x-2">
@@ -111,9 +111,9 @@ export default function CartPage() {
                       
                       {/* Customizations */}
                       {item.customizations && Object.keys(item.customizations).length > 0 && (
-                        <div className="mt-2 p-2 bg-secondary-50 rounded text-sm">
+                        <div className="mt-2 p-2 bg-gray-50 rounded text-sm">
                           {Object.entries(item.customizations).map(([key, options]) => (
-                            <div key={key} className="text-secondary-600">
+                            <div key={key} className="text-gray-600">
                               <span className="font-medium">{key}:</span> {options.join(', ')}
                             </div>
                           ))}
@@ -124,27 +124,27 @@ export default function CartPage() {
                         <div className="flex items-center space-x-3">
                           <button
                             onClick={() => updateQuantity(item.id, item.quantity - 1)}
-                            className="w-8 h-8 rounded-full border border-secondary-300 flex items-center justify-center hover:bg-secondary-50"
+                            className="w-8 h-8 rounded-full border border-gray-300 flex items-center justify-center hover:bg-gray-50"
                           >
                             <Minus className="w-4 h-4" />
                           </button>
-                          <span className="font-medium text-secondary-900 min-w-[2rem] text-center">
+                          <span className="font-medium text-gray-900 min-w-[2rem] text-center">
                             {item.quantity}
                           </span>
                           <button
                             onClick={() => updateQuantity(item.id, item.quantity + 1)}
-                            className="w-8 h-8 rounded-full border border-secondary-300 flex items-center justify-center hover:bg-secondary-50"
+                            className="w-8 h-8 rounded-full border border-gray-300 flex items-center justify-center hover:bg-gray-50"
                           >
                             <Plus className="w-4 h-4" />
                           </button>
                         </div>
                         
                         <div className="text-right">
-                          <p className="font-semibold text-secondary-900">
+                          <p className="font-semibold text-gray-900">
                             {formatPrice(item.menuItem.price * item.quantity)}
                           </p>
                           {item.quantity > 1 && (
-                            <p className="text-sm text-secondary-600">
+                            <p className="text-sm text-gray-600">
                               {formatPrice(item.menuItem.price)} each
                             </p>
                           )}
@@ -172,7 +172,7 @@ export default function CartPage() {
                       placeholder="Enter promo code"
                       value={promoCode}
                       onChange={(e) => setPromoCode(e.target.value)}
-                      className="flex-1 px-3 py-2 border border-secondary-300 rounded-lg text-sm focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                      className="flex-1 px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
                     />
                     <Button
                       size="sm"
@@ -190,22 +190,22 @@ export default function CartPage() {
                 </div>
 
                 {/* Bill Details */}
-                <div className="space-y-2 pt-4 border-t border-secondary-200">
+                <div className="space-y-2 pt-4 border-t border-gray-200">
                   <div className="flex justify-between text-sm">
-                    <span className="text-secondary-600">Subtotal</span>
-                    <span className="text-secondary-900">{formatPrice(subtotal)}</span>
+                    <span className="text-gray-600">Subtotal</span>
+                    <span className="text-gray-900">{formatPrice(subtotal)}</span>
                   </div>
                   
                   <div className="flex justify-between text-sm">
-                    <span className="text-secondary-600">Delivery Fee</span>
-                    <span className="text-secondary-900">
+                    <span className="text-gray-600">Delivery Fee</span>
+                    <span className="text-gray-900">
                       {deliveryFee === 0 ? 'FREE' : formatPrice(deliveryFee)}
                     </span>
                   </div>
                   
                   <div className="flex justify-between text-sm">
-                    <span className="text-secondary-600">Taxes & Fees</span>
-                    <span className="text-secondary-900">{formatPrice(taxes)}</span>
+                    <span className="text-gray-600">Taxes & Fees</span>
+                    <span className="text-gray-900">{formatPrice(taxes)}</span>
                   </div>
                   
                   {discount > 0 && (
@@ -215,9 +215,9 @@ export default function CartPage() {
                     </div>
                   )}
                   
-                  <div className="flex justify-between font-semibold text-lg pt-2 border-t border-secondary-200">
-                    <span className="text-secondary-900">Total</span>
-                    <span className="text-secondary-900">{formatPrice(total)}</span>
+                  <div className="flex justify-between font-semibold text-lg pt-2 border-t border-gray-200">
+                    <span className="text-gray-900">Total</span>
+                    <span className="text-gray-900">{formatPrice(total)}</span>
                   </div>
                 </div>
 
