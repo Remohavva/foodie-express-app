@@ -55,7 +55,7 @@ export function RestaurantFilters({ filters, onFiltersChange, onClose }: Restaur
             variant="ghost"
             size="sm"
             onClick={clearAllFilters}
-            className="text-primary-500 hover:text-primary-600"
+            className="text-orange-500 hover:text-orange-600"
           >
             Clear All
           </Button>
@@ -70,7 +70,7 @@ export function RestaurantFilters({ filters, onFiltersChange, onClose }: Restaur
       <CardContent className="space-y-6">
         {/* Rating Filter */}
         <div>
-          <h3 className="font-medium text-secondary-900 mb-3">Rating</h3>
+          <h3 className="font-medium text-gray-900 mb-3">Rating</h3>
           <div className="space-y-2">
             {[4.5, 4.0, 3.5, 3.0].map((rating) => (
               <label key={rating} className="flex items-center space-x-2 cursor-pointer">
@@ -79,7 +79,7 @@ export function RestaurantFilters({ filters, onFiltersChange, onClose }: Restaur
                   name="rating"
                   checked={filters.rating === rating}
                   onChange={() => updateFilter('rating', rating)}
-                  className="text-primary-500 focus:ring-primary-500"
+                  className="text-orange-500 focus:ring-orange-500"
                 />
                 <span className="text-sm text-secondary-700">
                   {rating}+ stars

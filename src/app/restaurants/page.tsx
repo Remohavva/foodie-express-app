@@ -16,7 +16,7 @@ export default function RestaurantsPage() {
   const [filters, setFilters] = useState({
     rating: 0,
     deliveryTime: 60,
-    costForTwo: [0, 1000],
+    costForTwo: [0, 1000] as [number, number],
     isVeg: false,
     cuisine: [] as string[]
   })
@@ -76,15 +76,15 @@ export default function RestaurantsPage() {
   }, [filters, sortBy])
 
   return (
-    <div className="min-h-screen bg-secondary-50">
+    <div className="min-h-screen bg-gray-50">
       <div className="container py-6">
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-center justify-between mb-6">
           <div>
-            <h1 className="text-2xl md:text-3xl font-bold text-secondary-900 mb-2">
+            <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
               Restaurants in Hyderabad
             </h1>
-            <p className="text-secondary-600">
+            <p className="text-gray-600">
               {filteredRestaurants.length} restaurants found
             </p>
           </div>
@@ -94,7 +94,7 @@ export default function RestaurantsPage() {
             <select
               value={sortBy}
               onChange={(e) => setSortBy(e.target.value)}
-              className="px-3 py-2 border border-secondary-300 rounded-lg bg-white text-sm focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+              className="px-3 py-2 border border-gray-300 rounded-lg bg-white text-sm focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
             >
               <option value="relevance">Relevance</option>
               <option value="rating">Rating</option>
@@ -105,13 +105,13 @@ export default function RestaurantsPage() {
             </select>
 
             {/* View Mode Toggle */}
-            <div className="flex border border-secondary-300 rounded-lg overflow-hidden">
+            <div className="flex border border-gray-300 rounded-lg overflow-hidden">
               <button
                 onClick={() => setViewMode('grid')}
                 className={`p-2 ${
                   viewMode === 'grid'
-                    ? 'bg-primary-500 text-white'
-                    : 'bg-white text-secondary-600 hover:bg-secondary-50'
+                    ? 'bg-orange-500 text-white'
+                    : 'bg-white text-gray-600 hover:bg-gray-50'
                 }`}
               >
                 <Grid className="w-4 h-4" />
@@ -120,8 +120,8 @@ export default function RestaurantsPage() {
                 onClick={() => setViewMode('list')}
                 className={`p-2 ${
                   viewMode === 'list'
-                    ? 'bg-primary-500 text-white'
-                    : 'bg-white text-secondary-600 hover:bg-secondary-50'
+                    ? 'bg-orange-500 text-white'
+                    : 'bg-white text-gray-600 hover:bg-gray-50'
                 }`}
               >
                 <List className="w-4 h-4" />
@@ -154,20 +154,20 @@ export default function RestaurantsPage() {
           <div className="flex-1">
             {filteredRestaurants.length === 0 ? (
               <div className="text-center py-12">
-                <div className="w-24 h-24 mx-auto mb-4 bg-secondary-200 rounded-full flex items-center justify-center">
-                  <Filter className="w-8 h-8 text-secondary-500" />
+                <div className="w-24 h-24 mx-auto mb-4 bg-gray-200 rounded-full flex items-center justify-center">
+                  <Filter className="w-8 h-8 text-gray-500" />
                 </div>
-                <h3 className="text-lg font-semibold text-secondary-900 mb-2">
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">
                   No restaurants found
                 </h3>
-                <p className="text-secondary-600 mb-4">
+                <p className="text-gray-600 mb-4">
                   Try adjusting your filters to see more results
                 </p>
                 <Button
                   onClick={() => setFilters({
                     rating: 0,
                     deliveryTime: 60,
-                    costForTwo: [0, 1000],
+                    costForTwo: [0, 1000] as [number, number],
                     isVeg: false,
                     cuisine: []
                   })}
