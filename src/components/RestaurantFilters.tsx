@@ -31,7 +31,7 @@ export function RestaurantFilters({ filters, onFiltersChange, onClose }: Restaur
 
   const toggleCuisine = (cuisine: string) => {
     const newCuisines = filters.cuisine.includes(cuisine)
-      ? filters.cuisine.filter(c => c !== cuisine)
+      ? filters.cuisine.filter((c: string) => c !== cuisine)
       : [...filters.cuisine, cuisine]
     updateFilter('cuisine', newCuisines)
   }
@@ -40,7 +40,7 @@ export function RestaurantFilters({ filters, onFiltersChange, onClose }: Restaur
     onFiltersChange({
       rating: 0,
       deliveryTime: 60,
-      costForTwo: [0, 1000],
+      costForTwo: [0, 1000] as [number, number],
       isVeg: false,
       cuisine: []
     })
@@ -81,7 +81,7 @@ export function RestaurantFilters({ filters, onFiltersChange, onClose }: Restaur
                   onChange={() => updateFilter('rating', rating)}
                   className="text-orange-500 focus:ring-orange-500"
                 />
-                <span className="text-sm text-secondary-700">
+                <span className="text-sm text-gray-700">
                   {rating}+ stars
                 </span>
               </label>
@@ -92,16 +92,16 @@ export function RestaurantFilters({ filters, onFiltersChange, onClose }: Restaur
                 name="rating"
                 checked={filters.rating === 0}
                 onChange={() => updateFilter('rating', 0)}
-                className="text-primary-500 focus:ring-primary-500"
+                className="text-orange-500 focus:ring-orange-500"
               />
-              <span className="text-sm text-secondary-700">Any rating</span>
+              <span className="text-sm text-gray-700">Any rating</span>
             </label>
           </div>
         </div>
 
         {/* Delivery Time Filter */}
         <div>
-          <h3 className="font-medium text-secondary-900 mb-3">Delivery Time</h3>
+          <h3 className="font-medium text-gray-900 mb-3">Delivery Time</h3>
           <div className="space-y-2">
             {[15, 30, 45, 60].map((time) => (
               <label key={time} className="flex items-center space-x-2 cursor-pointer">
@@ -110,9 +110,9 @@ export function RestaurantFilters({ filters, onFiltersChange, onClose }: Restaur
                   name="deliveryTime"
                   checked={filters.deliveryTime === time}
                   onChange={() => updateFilter('deliveryTime', time)}
-                  className="text-primary-500 focus:ring-primary-500"
+                  className="text-orange-500 focus:ring-orange-500"
                 />
-                <span className="text-sm text-secondary-700">
+                <span className="text-sm text-gray-700">
                   Under {time} mins
                 </span>
               </label>
@@ -122,7 +122,7 @@ export function RestaurantFilters({ filters, onFiltersChange, onClose }: Restaur
 
         {/* Cost Filter */}
         <div>
-          <h3 className="font-medium text-secondary-900 mb-3">Cost for Two</h3>
+          <h3 className="font-medium text-gray-900 mb-3">Cost for Two</h3>
           <div className="space-y-2">
             {[
               [0, 300],
@@ -135,10 +135,10 @@ export function RestaurantFilters({ filters, onFiltersChange, onClose }: Restaur
                   type="radio"
                   name="costForTwo"
                   checked={filters.costForTwo[0] === min && filters.costForTwo[1] === max}
-                  onChange={() => updateFilter('costForTwo', [min, max])}
-                  className="text-primary-500 focus:ring-primary-500"
+                  onChange={() => updateFilter('costForTwo', [min, max] as [number, number])}
+                  className="text-orange-500 focus:ring-orange-500"
                 />
-                <span className="text-sm text-secondary-700">
+                <span className="text-sm text-gray-700">
                   ₹{min} - ₹{max}
                 </span>
               </label>
@@ -148,10 +148,10 @@ export function RestaurantFilters({ filters, onFiltersChange, onClose }: Restaur
                 type="radio"
                 name="costForTwo"
                 checked={filters.costForTwo[0] === 0 && filters.costForTwo[1] === 1000}
-                onChange={() => updateFilter('costForTwo', [0, 1000])}
-                className="text-primary-500 focus:ring-primary-500"
+                onChange={() => updateFilter('costForTwo', [0, 1000] as [number, number])}
+                className="text-orange-500 focus:ring-orange-500"
               />
-              <span className="text-sm text-secondary-700">Any price</span>
+              <span className="text-sm text-gray-700">Any price</span>
             </label>
           </div>
         </div>
@@ -162,16 +162,16 @@ export function RestaurantFilters({ filters, onFiltersChange, onClose }: Restaur
             <input
               type="checkbox"
               checked={filters.isVeg}
-              onChange={(e) => updateFilter('isVeg', e.target.checked)}
-              className="text-primary-500 focus:ring-primary-500 rounded"
+              onChange={(e: any) => updateFilter('isVeg', e.target.checked)}
+              className="text-orange-500 focus:ring-orange-500 rounded"
             />
-            <span className="font-medium text-secondary-900">Pure Veg</span>
+            <span className="font-medium text-gray-900">Pure Veg</span>
           </label>
         </div>
 
         {/* Cuisine Filter */}
         <div>
-          <h3 className="font-medium text-secondary-900 mb-3">Cuisines</h3>
+          <h3 className="font-medium text-gray-900 mb-3">Cuisines</h3>
           <div className="space-y-2 max-h-48 overflow-y-auto">
             {cuisines.map((cuisine) => (
               <label key={cuisine} className="flex items-center space-x-2 cursor-pointer">
@@ -179,9 +179,9 @@ export function RestaurantFilters({ filters, onFiltersChange, onClose }: Restaur
                   type="checkbox"
                   checked={filters.cuisine.includes(cuisine)}
                   onChange={() => toggleCuisine(cuisine)}
-                  className="text-primary-500 focus:ring-primary-500 rounded"
+                  className="text-orange-500 focus:ring-orange-500 rounded"
                 />
-                <span className="text-sm text-secondary-700">{cuisine}</span>
+                <span className="text-sm text-gray-700">{cuisine}</span>
               </label>
             ))}
           </div>

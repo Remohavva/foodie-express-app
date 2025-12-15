@@ -45,12 +45,12 @@ export function RestaurantCard({ restaurant }: RestaurantCardProps) {
         {/* Content */}
         <div className="p-4">
           {/* Restaurant Name */}
-          <h3 className="text-lg font-semibold text-secondary-900 mb-1 group-hover:text-primary-500 transition-colors">
+          <h3 className="text-lg font-semibold text-gray-900 mb-1 group-hover:text-orange-500 transition-colors">
             {restaurant.name}
           </h3>
 
           {/* Cuisine */}
-          <p className="text-secondary-600 text-sm mb-3 line-clamp-1">
+          <p className="text-gray-600 text-sm mb-3 line-clamp-1">
             {restaurant.cuisine.join(', ')}
           </p>
 
@@ -72,14 +72,14 @@ export function RestaurantCard({ restaurant }: RestaurantCardProps) {
               </div>
 
               {/* Delivery Time */}
-              <div className="flex items-center space-x-1 text-secondary-600">
+              <div className="flex items-center space-x-1 text-gray-600">
                 <Clock className="w-3 h-3" />
                 <span>{formatDeliveryTime(restaurant.deliveryTime)}</span>
               </div>
             </div>
 
             {/* Cost for Two */}
-            <div className="text-secondary-900 font-medium">
+            <div className="text-gray-900 font-medium">
               {formatPrice(restaurant.costForTwo)} for two
             </div>
           </div>
